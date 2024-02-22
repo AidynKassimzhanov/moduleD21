@@ -95,3 +95,13 @@ code {
   grid-template-columns: repeat(4, 1fr); /* Создаем 4 колонки с равной шириной */
   grid-gap: 16px;
 }
+
+.filterCancel {
+  color: darkcyan;
+  transition: color 1s ease;
+}
+
+.filterCancel:hover {
+  color: rgb(14, 57, 57);
+  cursor: pointer;
+}

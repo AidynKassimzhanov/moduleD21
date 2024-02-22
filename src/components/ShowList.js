@@ -11,9 +11,11 @@ export const ShowList = () => {
         <div className='wrapper'>
             <Row className='d-flex show-list'>
                 
-                {filteredShows.map(show => (
-                    <ShowItem show={show} />
-                ))}
+                {filteredShows.length === 0 
+                    ? <h5> «No shows are matching the current filter criteria.</h5> 
+                    : filteredShows.map(show => (<ShowItem key={show.id}  show={show} />)) 
+                }
+
             </Row>
         </div>
     )

@@ -10,10 +10,10 @@ export const MyContext = React.createContext();
 
 const MyContextProvider = ({ children }) => {
 
+  // const [isFilter, setIsFilter] = useState(false)
+  const [isFilter, setIsFilter] = useState(false)
   const [shows, setShows] = useState([]);
-
   const [filteredShows, setFilteredShows] = useState([]);
-
   const [filterValues, setFilterValues] =useState({date: [], location: [], artist: []})
 
   const [filters, setFilters] = useState({ date: '', location: '', artist: '' });
@@ -21,6 +21,10 @@ const MyContextProvider = ({ children }) => {
   const updateFilter = (field, value) => {
     const newFilters = { ...filters, [field]: value }
     setFilters(newFilters); 
+  }
+
+  const clearFilter = () => {
+    setFilters({ date: '', location: '', artist: '' })
   }
 
 useEffect(() => {
@@ -33,6 +37,7 @@ useEffect(() => {
     );
   });
   setFilteredShows(filteredData)
+  setIsFilter(filters.date !== '' || filters.location !== '' || filters.artist !== '') 
 }, [filters])
 
 
@@ -71,7 +76,7 @@ useEffect(() => {
   }, []);
 
   return (
-    <MyContext.Provider value={{shows, filterValues, filters, filteredShows, updateFilter}}>
+    <MyContext.Provider value={{isFilter, shows, filterValues, filters, filteredShows, updateFilter, clearFilter}}>
       {children}
     </MyContext.Provider>
   );
