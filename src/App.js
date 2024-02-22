@@ -3,13 +3,13 @@ import { Main } from "./components/Main";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <div className="wrapper">
-      
-        <Main />
+      <div className="App">
+        <Header />
+        <div className="wrapper">
+        
+          <Main />
+        </div>
       </div>
-    </div>
   );
 }
 
