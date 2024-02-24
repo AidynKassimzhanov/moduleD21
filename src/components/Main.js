@@ -1,14 +1,16 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React from 'react'
 import Dropdown from './Dropdown'
-import { fetchConcerts } from '../http/concertsApi'
 import { ShowList } from './ShowList'
-import { MyContext } from '..'
-// import { fetchConcerts } from '../http/concertsApi'
 import { FaFilterCircleXmark } from "react-icons/fa6";
+import { useDispatch, useSelector } from 'react-redux';
+import { clearFilter } from '../store/showReducer';
 
 export const Main = () => {
     
-    const {isFilter, filters, clearFilter, filterValues} = useContext(MyContext)
+    const {isFilter, filterValues} = useSelector(state => state.show)
+
+    const dispatch = useDispatch()
+
 
     return (
         <div className='main'>
@@ -17,7 +19,7 @@ export const Main = () => {
                 <Dropdown title="Artist" options={filterValues.artist}/>
                 <Dropdown title="Location" options={filterValues.location}/>
                 <Dropdown title="Date" options={filterValues.date}/>
-                {isFilter ? <FaFilterCircleXmark  size={25} className='filterCancel' onClick={ () => clearFilter() } /> : null}
+                {isFilter ? <FaFilterCircleXmark  size={25} className='filterCancel' onClick={ () => dispatch(clearFilter()) } /> : null}
             </div>
             <ShowList />
         </div>

@@ -1,22 +1,23 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Row } from 'react-bootstrap';
 import { ShowItem } from './ShowItem';
-import { MyContext } from '../index';
+import { MyContext } from '../MyContext';
+import { useDispatch, useSelector } from 'react-redux';
+import { setFilteredShows, setIsFilter } from '../store/showReducer';
+// import { MyContext } from '../index';
 
 export const ShowList = () => {
     
-    const {filteredShows} = useContext(MyContext);
+    const {filteredShows} = useSelector(state => state.show);
 
     return (
         <div className='wrapper'>
-            <Row className='d-flex show-list'>
-                
-                {filteredShows.length === 0 
-                    ? <h5> «No shows are matching the current filter criteria.</h5> 
-                    : filteredShows.map(show => (<ShowItem key={show.id}  show={show} />)) 
-                }
-
-            </Row>
+            {filteredShows.length === 0 
+                ?   <h3> «No shows are matching the current filter criteria.</h3>
+                :   <Row className='d-flex show-list'>
+                        { filteredShows.map(show => (<ShowItem key={show.id}  show={show} />)) }
+                    </Row>
+            }
         </div>
     )
 }
