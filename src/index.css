@@ -55,6 +55,8 @@ code {
   background: rgb(15, 77, 77);
 }
 
+/* ------------------------------------- */
+
 .main h1{
   text-align: center;
 }
@@ -64,9 +66,13 @@ code {
   padding: 5px;
 }
 
+.dropdown select:hover {
+  cursor: pointer;
+}
+
 .filterPanel {
   width: 50%;
-  margin: 0 auto;
+  margin: 30px auto;
   display: flex;
   justify-content: space-around;
 }
@@ -83,6 +89,7 @@ code {
   cursor: pointer;
   color: rgb(40, 86, 86);
   transition: all 1s ease;
+  margin-bottom: 10px;
 }
 
 .card:hover {
@@ -90,7 +97,7 @@ code {
   color: white;
 }
 
-.d-flex {
+.display-flex {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* Создаем 4 колонки с равной шириной */
   grid-gap: 16px;
@@ -105,3 +112,111 @@ code {
   color: rgb(14, 57, 57);
   cursor: pointer;
 }
+
+/* ------------------------------------------- */
+.seatingPage, .bookingPage{
+  color: darkcyan;
+}
+
+.seatingPage h2, .bookingPage h2{
+  text-align: center;
+  margin: 20px 0;
+}
+
+.seatingPage .show, .bookingPage .show {
+  border: 1px solid darkcyan;
+  border-radius: 10px;
+  padding: 10px;
+  width: 250px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  background: darkcyan;
+  color: white;
+}
+
+.seatings {
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+.stage {
+  width: 65%;
+  border: 1px solid darkcyan;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.stage .stageButton {
+  display: flex;
+  width: 200px;
+  height: 50px;
+  background: darkcyan;
+  color: white;
+  margin: 20px auto;
+  justify-content: center;
+  align-items: center;
+} 
+
+.rows {
+  display: flex;
+  margin: 0 auto;
+  padding: 0 20px;
+} 
+
+.rowName {
+  width: 100px;
+}
+
+.seats {
+  display: flex;
+  width: 600px;
+  justify-content: center;
+}
+
+.seat {
+  width: 15px;
+  height: 15px;
+  border: 1px solid darkcyan;
+  border-radius: 50%;
+  /* margin: 2px; */
+}
+
+.free:hover {
+  background: darkcyan;
+  cursor: pointer;
+}
+
+.reserv:hover {
+  background: rgb(183, 159, 159);
+  cursor: pointer;
+}
+
+.booked {
+  background: rgb(172, 11, 11);
+}
+
+.reserv {
+  background: rgb(75, 132, 217);
+}
+
+.selectedSeats {
+  width: 30%;
+  border: 1px solid darkcyan;
+  height: 100%;
+  text-align: center;
+  padding: 20px;
+} 
+
+.selectedSeats h5 {
+  margin-bottom: 50px;
+}
+
+.expire {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/* --------------------------------- */

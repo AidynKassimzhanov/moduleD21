@@ -1,13 +1,17 @@
 import React from 'react'
 import { Card, Col } from 'react-bootstrap'
+import { Navigate, useNavigate } from 'react-router-dom'
+import { SHOW_SEATS_ROUTE } from '../consts'
 
 export const ShowItem = ({show}) => {
+
+    const navigate = useNavigate()
+
   return (
     <div className='show-item'>
         <Col 
-            md={3} 
-            className={"mt-3"} 
-            // onClick={() => navigate(DEVICE_ROUTE + '/' + device.id)}
+            onClick={() => navigate(SHOW_SEATS_ROUTE + '/' + show.id, { state: { data: show }}) }
+            // onClick={() => console.log(show.concertId)}
         >
             <Card>
                 <div key={show.id}>

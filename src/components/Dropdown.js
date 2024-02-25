@@ -5,9 +5,8 @@ import { setFilters } from '../store/showReducer';
 // import { MyContext, useDataFilter } from '../index';
 
 const Dropdown = (props) => {
-    // const {updateFilter} = useContext(MyContext)
+  
     const filter = useSelector(state => state.show)
-
     const dispatch = useDispatch()
     const options = props.options;
   
@@ -15,13 +14,11 @@ const Dropdown = (props) => {
       const field = title.toLowerCase()
       const filter = {[field]: option}
       dispatch(setFilters(filter));
-      // dispatch(setFilters(field, option));
     };
     
     return (
       <div className='dropdown'>
         <select onChange={(e) => handleSelect(props.title, e.target.value)} value={filter[props.title.toLowerCase()]}>
-          {/* {filter[props.title.toLowerCase()] !== ''  && <option value="">{props.title}</option>} */}
           <option value="">{props.title}</option>
           {options.map((option, index) => (
             <option key={index} value={option}>
