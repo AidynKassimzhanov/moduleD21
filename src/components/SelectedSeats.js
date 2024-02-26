@@ -41,17 +41,20 @@ export const SelectedSeats = (props) => {
         <div className="selectedSeats">
             <h5>Selected seats</h5>
 
-            {reservation_seats.map(seat =>(
-                <p> Row: {seat.row.name}, Seat: {seat.seat.id} </p>
-            ))}
-
-            { expire_times.minute === 0 && expire_times.second === 0 
-                ? null
-                : <p className='expire'>Your seets expire in <b>{formatTime(expire_times.minute)}:{formatTime(expire_times.second)}</b></p>
-            }
+            {expire_times.minute === 0 && expire_times.second === 0 ? (
+                <p>Your seat reservation expired. The reservation has been cancelled.</p>
+            ) : (
+                <div>
+                    {reservation_seats.map(seat => (
+                        <p>Row: {seat.row.name}, Seat: {seat.seat.id}</p>
+                    ))}
+                    <p className='expire'>Your seats expire in <b>{formatTime(expire_times.minute)}:{formatTime(expire_times.second)}</b></p>
+                </div>
+            )}
 
             <Button 
                 variant="primary" 
+
                 onClick={() => {
                     if (props.route === '/shows') {
                         navigate(props.route + '/' + show.id, { state: { data: show }});

@@ -3,6 +3,7 @@ import { Show } from './Show'
 import { SelectedSeats } from './SelectedSeats'
 import { SHOW_SEATS_ROUTE } from '../consts'
 import { useSelector } from 'react-redux'
+import { EnterBookDetails } from './EnterBookDetails'
 
 export const Booking = () => {
 
@@ -13,6 +14,7 @@ export const Booking = () => {
             <Show />
             <div className='booking'>
                 <SelectedSeats route={SHOW_SEATS_ROUTE} buttonTitle={"<- Change Seats"}/>
+                <EnterBookDetails />
             </div>
         </div>
     )

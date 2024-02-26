@@ -18,7 +18,7 @@ const Dropdown = (props) => {
     
     return (
       <div className='dropdown'>
-        <select onChange={(e) => handleSelect(props.title, e.target.value)} value={filter[props.title.toLowerCase()]}>
+        <select onChange={(e) => handleSelect(props.title, e.target.value)} value={filter[props.title.toLowerCase()] || props.title}>
           <option value="">{props.title}</option>
           {options.map((option, index) => (
             <option key={index} value={option}>
