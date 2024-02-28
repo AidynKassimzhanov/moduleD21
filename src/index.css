@@ -313,3 +313,7 @@ hr {
   height: 100%;
   font-size: 1.2rem;
 }
+
+.form .required {
+  border: 2px solid red;
+}

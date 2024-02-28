@@ -20,6 +20,6 @@ export const fetchReservation = async (concerId, showId, bodyData) => {
 }
 
 export const fetchBooking = async (concerId, showId, bodyData) => {
-    const {data} = await $host.post(`concerts/${concerId}/shows/${showId}/reservation`, bodyData )
+    const {data} = await $host.post(`concerts/${concerId}/shows/${showId}/booking`, bodyData )
     return data
 }

@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { setExpireTimes, setExpireToken, setReservationSeats, setReservationToken, setRows, toggleReservationSeat } from '../store/showSeatingReducer';
+import { setExpireTimes, setExpireToken, setReservationToken, setRows, toggleReservationSeat } from '../store/showSeatingReducer';
 import { fetchReservation } from '../http/concertsApi';
 
 export const Seat = (props) => {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Seat } from './Seat';
 
 export const Row = (props) => {

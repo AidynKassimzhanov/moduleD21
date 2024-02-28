@@ -1,21 +1,18 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation, useParams } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { setRows, setShow } from '../store/showSeatingReducer';
 import { fetchSeatings } from '../http/concertsApi';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Show } from './Show';
 import { Stage } from './Stage';
 import { SelectedSeats } from './SelectedSeats';
 import { BOOKING_ROUTE } from '../consts';
 
 export const ShowSeatings = () => {
-    const {id} = useParams()
     const location = useLocation();
+    const dispatch = useDispatch()  
+
     const data = location.state?.data;
-
-    const dispatch = useDispatch()
-    const {show, rows} = useSelector(state => state.seatings)
-
     const [isLoading, setIsLoading] = useState(true); 
 
     useEffect(() => {

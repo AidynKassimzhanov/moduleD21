@@ -16,7 +16,7 @@ export const Main = () => {
     useEffect(() => {
       dispatch(fetchInitialData());
       // console.log(shows)
-    }, []);
+    }, [dispatch]);
   
     useEffect(() => {
       if (!loading) {
@@ -27,7 +27,7 @@ export const Main = () => {
           date: [...new Set(shows.map(show => show.start.slice(0, 10)))]
         }));
       }
-    }, [loading]);
+    }, [loading, dispatch, shows]);
   
     useEffect(() => {
         const filteredData = shows.filter(item => {
@@ -40,7 +40,7 @@ export const Main = () => {
         });
         dispatch(setFilteredShows(filteredData))
         dispatch(setIsFilter(filters.date !== '' || filters.location !== '' || filters.artist !== ''))
-    }, [filters])
+    }, [filters, dispatch, shows])
   
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error: {error}</div>;

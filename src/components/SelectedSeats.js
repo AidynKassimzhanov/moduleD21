@@ -3,7 +3,6 @@ import { Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearReservationSeat, setExpireTimes } from '../store/showSeatingReducer';
 import { useNavigate } from 'react-router-dom';
-import { BOOKING_ROUTE } from '../consts';
 
 export const SelectedSeats = (props) => {
     const {reservation_seats, expire_times, show} = useSelector(state => state.seatings)   
@@ -32,7 +31,7 @@ export const SelectedSeats = (props) => {
     
         // Очистка интервала перед размонтированием компонента
         return () => clearInterval(timer);
-      }, [expire_times]);
+      }, [expire_times, dispatch]);
 
     const formatTime = (time) => String(time).padStart(2, '0');
 

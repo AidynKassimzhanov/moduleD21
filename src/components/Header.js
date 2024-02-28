@@ -1,7 +1,4 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchConcerts } from '../http/concertsApi';
-import { fetchInitialData, fetchShows } from '../store/showReducer';
+import React from 'react'
 
 export const Header = () => {
 

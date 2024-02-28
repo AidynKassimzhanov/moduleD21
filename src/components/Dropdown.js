@@ -1,8 +1,6 @@
-import React, { useContext } from 'react';
-import MyContext from '../MyContext';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilters } from '../store/showReducer';
-// import { MyContext, useDataFilter } from '../index';
 
 const Dropdown = (props) => {
   

@@ -1,10 +1,7 @@
-import React, { useContext, useEffect } from 'react'
+import React from 'react'
 import { Row } from 'react-bootstrap';
 import { ShowItem } from './ShowItem';
-import { MyContext } from '../MyContext';
-import { useDispatch, useSelector } from 'react-redux';
-import { setFilteredShows, setIsFilter } from '../store/showReducer';
-// import { MyContext } from '../index';
+import { useSelector } from 'react-redux';
 
 export const ShowList = () => {
     

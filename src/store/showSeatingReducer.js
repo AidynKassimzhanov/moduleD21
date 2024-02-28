@@ -1,8 +1,17 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { fetchConcerts, fetchSeatings } from "../http/concertsApi";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  show: {},
+  show: {
+    id: null,
+    start: '',
+    end: '',
+    artist: '',
+    concertId: null,
+    location: {
+        id: null,
+        name: ''
+    }
+  },
   rows: [],
   reservation_token: '',
   reservation_seats: [],
@@ -44,7 +53,7 @@ const slice = createSlice({
             }
         },
         clearReservationSeat: (state) => {
-            state.expire_token = [];
+            state.expire_token = '';
         },   
         setExpireTimes: (state, action) => {
             // console.log(action.payload)

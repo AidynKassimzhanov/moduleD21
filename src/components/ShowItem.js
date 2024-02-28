@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card, Col } from 'react-bootstrap'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { SHOW_SEATS_ROUTE } from '../consts'
 
 export const ShowItem = ({show}) => {
