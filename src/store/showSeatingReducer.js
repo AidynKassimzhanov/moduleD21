@@ -53,7 +53,7 @@ const slice = createSlice({
             }
         },
         clearReservationSeat: (state) => {
-            state.expire_token = '';
+            state.reservation_seats = [];
         },   
         setExpireTimes: (state, action) => {
             // console.log(action.payload)

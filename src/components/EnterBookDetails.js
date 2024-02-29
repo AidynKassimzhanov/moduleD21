@@ -5,6 +5,8 @@ import { setUpdateFormData } from '../store/bookingReducer';
 import { fetchBooking } from '../http/concertsApi';
 import { TICKETS_ROUTE } from '../consts';
 import { useNavigate } from 'react-router-dom';
+import { clearReservationSeat } from '../store/showSeatingReducer';
+import { setBookedOn, setName, setTickets } from '../store/ticketReducer';
 
 const csvFilePath = '/countries.csv';
 
@@ -50,6 +52,14 @@ export const EnterBookDetails = () => {
             fetchBooking(show.concertId, show.id, bodyData).then(response => {
                 console.log(response);
                 if (response.status === 201) {
+                    dispatch(clearReservationSeat())
+                    const data = response.data
+                    dispatch(setName(data[0].name))
+                    dispatch(setBookedOn(data[0].created_at))
+                    dispatch(setTickets(data))
+                    // data.map(ticketData => {
+
+                    // })
                     navigate(TICKETS_ROUTE)
                 }
             })

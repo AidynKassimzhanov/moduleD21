@@ -7,7 +7,7 @@ export const Show = () => {
         <div>
                 <h2>Book seats for you show</h2>
                 <div className='show'>
-                    <div > sadasdas
+                    <div> 
                         <p> {show.start.slice(0, 10)}</p>
                         <h4> {show.artist}</h4>
                         <p> {show.location.name}</p>

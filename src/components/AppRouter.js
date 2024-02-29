@@ -14,7 +14,7 @@ export const AppRouter = () => {
             <Route path={HOME_ROUTE} element={ <Main /> } exact/>
             <Route path={SHOW_SEATS_ROUTE + '/:id'} element={ <ShowSeatings /> } exact/>
             <Route path={BOOKING_ROUTE} element={ <Booking /> } exact/>
-            <Route path={TICKETS_ROUTE} element={ <TicketsPage /> } exact/>
+            <Route path={TICKETS_ROUTE} element={ <TicketsPage /> } />
             {/* <Route path="/contact" component={Contact} />   */}
         </Routes>
     </div>

@@ -6,12 +6,12 @@ function App() {
 
   return (
       <div className="App">
-        <Header />
-        <div className="wrapper">
-          <BrowserRouter>
+        <BrowserRouter>
+          <Header />
+          <div className="wrapper">
             <AppRouter />
-          </BrowserRouter>
-        </div>
+          </div>
+        </BrowserRouter>
       </div>
   );
 }
